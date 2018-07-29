@@ -1,12 +1,12 @@
 # vim:set ft=dockerfile:
-FROM slothai/openblas:0.3.0 as openblas
+FROM slothai/openblas:0.3.1 as openblas
 FROM python:3.6.5-alpine3.7
 
 # Metadata as defined at http://label-schema.org
 ARG BUILD_DATE
 ARG VCS_REF
 
-ARG NUMPY_VERSION=1.14.5
+ARG NUMPY_VERSION=1.15.0
 
 COPY --from=openblas /opt/OpenBLAS/ /opt/OpenBLAS/
 
